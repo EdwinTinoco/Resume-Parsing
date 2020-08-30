@@ -30,7 +30,6 @@ export default class Home extends Component {
          var base64Text = Base64.encodeArray(event.target.result);
          // console.log('base64', base64Text);
 
-
          const data = {
             DocumentAsBase64String: base64Text,
             RevisionDate: "2020-08-28"
@@ -84,7 +83,6 @@ export default class Home extends Component {
             <h2>Upload resume file</h2>
 
             <input type="file" name="file" onChange={this.handleChange} />
-
          </div>
       )
    }
