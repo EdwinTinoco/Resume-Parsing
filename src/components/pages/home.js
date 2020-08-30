@@ -59,7 +59,6 @@ export default class Home extends Component {
 
          var obj = {
             method: 'POST',
-            mode: 'no-cors',
             headers,
             body: {
                data: JSON.stringify(data)
