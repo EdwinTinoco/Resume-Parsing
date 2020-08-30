@@ -36,6 +36,7 @@ export default class Home extends Component {
          }
 
          const headers = {
+            "Access-Control-Allow-Origin": 'https://et-resume-parse.herokuapp.com/',
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Sovren-AccountId": "12345678",
@@ -62,7 +63,9 @@ export default class Home extends Component {
             headers,
             body: {
                data: JSON.stringify(data)
-            }
+            },
+            host: 'rest.resumeparsing.com',
+            origin: 'https://et-resume-parse.herokuapp.com/'
          }
 
          fetch('https://rest.resumeparsing.com/v9/parser/resume', obj)
