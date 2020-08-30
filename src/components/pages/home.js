@@ -42,36 +42,38 @@ export default class Home extends Component {
             "Sovren-ServiceKey": "eumey7feY5zjeWZW397Jks6PBj2NRKSH"
          }
 
-         axios.post('https://rest.resumeparsing.com/v9/parser/resume',
-            {
-               data: JSON.stringify(data)
-            },
-            { headers: headers }
-         )
-            .then(response => {
-               console.log('response', response.data);
-
-            })
-            .catch(error => {
-               console.log('handleChange error', error);
-            })
-
-
-         // var obj = {
-         //    method: 'POST',
-         //    mode: 'no-cors',
-         //    headers,
-         //    body: JSON.stringify(data)
-         // }
-
-         // fetch('https://rest.resumeparsing.com/v9/parser/resume', obj)
+         // axios.post('https://rest.resumeparsing.com/v9/parser/resume',
+         //    {
+         //       data: JSON.stringify(data)
+         //    },
+         //    { headers: headers }
+         // )
          //    .then(response => {
-         //       console.log('res', response.data);
+         //       console.log('response', response.data);
+
          //    })
          //    .catch(error => {
          //       console.log('handleChange error', error);
-
          //    })
+
+
+         var obj = {
+            method: 'POST',
+            mode: 'no-cors',
+            headers,
+            body: {
+               data: JSON.stringify(data)
+            }
+         }
+
+         fetch('https://rest.resumeparsing.com/v9/parser/resume', obj)
+            .then(response => {
+               console.log('res', response.data);
+            })
+            .catch(error => {
+               console.log('handleChange error', error);
+
+            })
       }
 
       reader.readAsArrayBuffer(file);
