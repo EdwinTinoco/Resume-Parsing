@@ -44,9 +44,9 @@ export default class Home extends Component {
 
          axios.post('https://rest.resumeparsing.com/v9/parser/resume',
             {
-               "data": JSON.stringify(data)
+               data: JSON.stringify(data)
             },
-            headers
+            { headers: headers }
          )
             .then(response => {
                console.log('response', response.data);
